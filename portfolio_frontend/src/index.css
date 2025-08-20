@@ -1,13 +1,46 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  @apply bg-white text-slate-800 antialiased;
+}
+
+/* Container utility for consistent max-width and padding */
+.container-custom {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Section spacing */
+.section {
+  @apply py-20 sm:py-24;
+}
+
+/* Subtle card style */
+.card {
+  @apply bg-white border border-secondary rounded-xl shadow-subtle;
+}
+
+/* Button styles */
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold transition-colors;
+}
+.btn-primary {
+  @apply bg-accent text-slate-900 hover:bg-sky-300;
+}
+.btn-ghost {
+  @apply text-primary hover:text-slate-900 hover:bg-secondary;
+}
+
+/* Headings */
+.h-section {
+  @apply text-2xl sm:text-3xl font-bold tracking-tight text-slate-900;
+}
+.h-subtle {
+  @apply text-primary;
 }
